@@ -170,6 +170,7 @@ extern "C" {
 
 void init(void);
 void initVariant(void);
+void initArduino_basic(void);
 void initArduino(void);
 
 unsigned long pulseIn(uint8_t pin, uint8_t state, unsigned long timeout);

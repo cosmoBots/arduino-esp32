@@ -253,7 +253,7 @@ extern bool btInUse();
 #endif
 #endif
 
-void initArduino()
+void initArduino_basic()
 {
     //init proper ref tick value for PLL (uncomment if REF_TICK is different than 1MHz)
     //ESP_REG(APB_CTRL_PLL_TICK_CONF_REG) = APB_CLK_FREQ / REF_CLK_FREQ - 1;
@@ -263,6 +263,12 @@ void initArduino()
 #if CONFIG_SPIRAM_SUPPORT || CONFIG_SPIRAM
     psramInit();
 #endif
+
+}
+
+void initArduino()
+{
+    initArduino_basic();
 #ifdef CONFIG_APP_ROLLBACK_ENABLE
     if(!verifyRollbackLater()){
         const esp_partition_t *running = esp_ota_get_running_partition();

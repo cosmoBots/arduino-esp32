@@ -24,7 +24,7 @@ limitations under the License.
 #include "freertos/FreeRTOS.h"
 // clang-format on
 
-#include "driver/i2s.h"
+#include "driver/i2s_std.h"
 #include "esp_log.h"
 #include "esp_spi_flash.h"
 #include "esp_system.h"
